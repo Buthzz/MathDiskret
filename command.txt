@@ -1,0 +1,34 @@
+# Tahap 1 Setiap pengubahan materi
+* rules:
+Jangan lupa setiap file markdown wajib paling atas (#) sebagai judul dari materi. lalu bagian materinya. 
+- tambahkan file .md baru sesuai judul materi
+- tambahkan nama file md baru dibuat ditambahkan ke toc => materi/_toc.yml
+Jalankan perintah: ($) 
+$ jupyter-book build materi
+
+
+# Tahap 2 Push file perubahan ke github
+* bagian ini ga wajib hanya saran kalau data di codespace hilang, jaga jaga jadi bisa di upload ke repo.
+Jalankan perintah: ($) 
+$ git add .
+$ git commit -m "materi"
+$ git push
+
+# Tahap 3 Hasil build menjadi website online di github pages
+Jalankan perintah: ($) 
+$ pip install ghp-import -> skip perintah ini jika merasa sudah install
+$ cd materi
+$ ghp-import -n -p -f _build/html 
+* Tunggu progress deploy kurang lebih 1 menitan, 5 menit maks. bisa dilihat progress di repos bagian deployments, jika sudah centang hijau berarti sudah selesai dan silahkan cek webnya.
+
+
+* NOTES:
+Setiap ada perubahan di file maupun _toc.yml wajib build ulang
+
+If your book’s Table of Contents doesn’t update after changing the _toc.yml file, try:
+$ jupyter-book build --all materi
+
+&Jika ada error sabar, kadang setiap orang beda beda errornya.
+
+refrensi web official: https://jupyterbook.org/en/stable/start/your-first-book.html
+Creator dokumentasi: @mfjrxn
