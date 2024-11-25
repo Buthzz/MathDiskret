@@ -25,31 +25,61 @@ Dalam konteks matematika, deretan sering merujuk pada barisan bilangan, yaitu ku
 
 ### Deret Aritmetika
 Deret dengan pola kenaikan atau penurunan tetap.
-- Contoh: 
+- Contoh: 2,5,8,11,14,...
 - Rumus suku ke-n:
+![img.png](img/deretaritmatika.png)
 
 Di mana:
-- : suku pertama 
-- : beda (selisih antar suku
-- : nomor suku yang dicari
+- a: suku pertama 
+- b: beda (selisih antar suku
+- n: nomor suku yang dicari
 
 ### Deret Geometri
 Deret dengan pola kelipatan tetap.
-- Contoh: 
+- Contoh: 3,6,12,24,48,... 
 - Rumus suku ke-n:
+![img.png](img/deretgeometri.png)
 
 Di mana:
-- : suku pertama 
-- : rasio (perbandingan antar suku,
-- : nomor suku yang dicari
+- a: suku pertama 
+- r: rasio (perbandingan antar suku,
+- n: nomor suku yang dicari
 
 ### Deret Bilangan Kuadrat
 Deret dengan pola nilai berupa kuadrat bilangan bulat.
-- Contoh: 
+- Contoh: 1,4,9,16,25,...
 - Rumus suku ke-n:
+![img.png](img/deretkuadrat.png)
 
 ### Deret Bilangan Kubik
 Deret dengan pola nilai berupa kubik bilangan bulat.
-- Contoh: 
+- Contoh: 1,8,27,64,125,...
 - Rumus suku ke-n:
+![img.png](img/deretkubik.png)
 
+### Deret Fibonacci
+Deret dengan pola di mana setiap suku merupakan jumlah dua suku sebelumnya.
+- Contoh: 0,1,1,2,3,5,8,...
+- Rumus suku ke-n (rekursif):
+![img.png](img/deretfibonacci.png)
+
+### String
+- String adalah deretan berhingga karakter berbentu a1a2a3a4...an
+Panjang string s adalah jumlah karakter di dalam string tersebut
+Contoh: Informatika adalah string dengan panjang 11 karakter 10100101 adalah string biner dengan panjang 8 bit
+- String kosong dilambangkan dengan $$ \lambda $$ , panjangnya = 0
+
+#### Penjumlahan deretan
+Jumlah deretan
+am, am+1, am+2,...,an
+adalah
+am + am+1, + am+2 + ... an
+atau dalam notasi sumasi:
+
+$$ \Sigma_{km}^n $$ ak
+
+- k adalah index summasi,
+- m adalah batas bawah indeks,
+- n adalah batas atas indeks
+
+[//]: # (Terakhir slide 11)
