@@ -82,24 +82,54 @@ $$ \Sigma_{km}^n $$ ak
 - m adalah batas bawah indeks,
 - n adalah batas atas indeks
 
-[//]: # (Terakhir slide 11)
-Contoh 2
-Contoh 3
-Contoh 4
-
-[//]: # (masih kosong)
+![img_1.png](img/img_2.png)
 
 [//]: # (Slide 12)
 ##### Tugas pembuktian dari 3 rumus dibawah
 Beberapa sumasi sudah ditemukan rumus penjumlahannya sebagai berikut:
 
-![img_1.png](img_1.png)
+![img_1.png](img/img_1.png)
 
-[//]: # (Slide 13)
-Contoh 5
+![img_1.png](img/img_3.png)
 
 ### Sumasi ganda
 Di dalam algoritma, kita perlu menghitung berapa kali suatu operasi tertentu dilakukan di dalam sebuah kalang bersarang (nested loop)
 . Penjumlahan semua operasi di dalam kalang bersarang dinyatakan dalam bentuk sumasi ganda.
 
-Contoh: $$ \Sigma_{km}^n $$ 
+Contoh: ![img_1.png](img/img_4.png)
+
+![img_1.png](img/img_145.png)
+
+Contoh penggunaan: Berapa kali operasi + dilakukan didalam algoritma di bawah ini
+![img_2.png](img/img_2476.png)
+
+![img_1.png](img/img_123.png)
+
+![img_1.png](img/img_146.png)
+
+## Rekursi
+
+- Sebuah objek dikatakan **rekursi** _(recursive)_ jika ia didefinisikan dalam terminologi dirinya sendiri.
+- Proses mendefinisikan objek dalam terminologi dirinya sendiri disebut rekursi (recursion).
+- Objek fraktal adalah contoh bentuk rekursif
+
+![img_1.png](img/img_132.png)
+
+### Fungsi rekursif
+
+![img_1.png](img/img_122.png)
+
+![img_1.png](img/img_12.png)
+
+![img_1.png](img/img_23.png)
+
+![img_1.png](img/img_24.png)
+
+Contoh 7: Nyatakan n! dalam definisi rekursif
+Solusi: ![img_1.png](img/img_6.png)
+
+Misalkan f(n) = n!, maka
+![img_1.png](img/img_7.png)
+
+Menghitung 5! secara rekursif adalah:
+![img_1.png](img/img_8.png)
