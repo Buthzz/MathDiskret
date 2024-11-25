@@ -83,3 +83,23 @@ $$ \Sigma_{km}^n $$ ak
 - n adalah batas atas indeks
 
 [//]: # (Terakhir slide 11)
+Contoh 2
+Contoh 3
+Contoh 4
+
+[//]: # (masih kosong)
+
+[//]: # (Slide 12)
+##### Tugas pembuktian dari 3 rumus dibawah
+Beberapa sumasi sudah ditemukan rumus penjumlahannya sebagai berikut:
+
+![img_1.png](img_1.png)
+
+[//]: # (Slide 13)
+Contoh 5
+
+### Sumasi ganda
+Di dalam algoritma, kita perlu menghitung berapa kali suatu operasi tertentu dilakukan di dalam sebuah kalang bersarang (nested loop)
+. Penjumlahan semua operasi di dalam kalang bersarang dinyatakan dalam bentuk sumasi ganda.
+
+Contoh: $$ \Sigma_{km}^n $$ 
