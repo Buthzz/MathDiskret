@@ -60,6 +60,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'deretandanrekursi';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -366,6 +368,19 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-geometri">Deret Geometri</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-bilangan-kuadrat">Deret Bilangan Kuadrat</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-bilangan-kubik">Deret Bilangan Kubik</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-fibonacci">Deret Fibonacci</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string">String</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#penjumlahan-deretan">Penjumlahan deretan</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#tugas-pembuktian-dari-3-rumus-dibawah">Tugas pembuktian dari 3 rumus dibawah</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sumasi-ganda">Sumasi ganda</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rekursi">Rekursi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-rekursif">Fungsi rekursif</a></li>
 </ul>
 </li>
 </ul>
@@ -409,45 +424,121 @@ an = 7 – 3n
 <h3>Deret Aritmetika<a class="headerlink" href="#deret-aritmetika" title="Link to this heading">#</a></h3>
 <p>Deret dengan pola kenaikan atau penurunan tetap.</p>
 <ul class="simple">
-<li><p>Contoh:</p></li>
-<li><p>Rumus suku ke-n:</p></li>
+<li><p>Contoh: 2,5,8,11,14,…</p></li>
+<li><p>Rumus suku ke-n:
+<img alt="img.png" src="_images/deretaritmatika.png" /></p></li>
 </ul>
 <p>Di mana:</p>
 <ul class="simple">
-<li><p>: suku pertama</p></li>
-<li><p>: beda (selisih antar suku</p></li>
-<li><p>: nomor suku yang dicari</p></li>
+<li><p>a: suku pertama</p></li>
+<li><p>b: beda (selisih antar suku</p></li>
+<li><p>n: nomor suku yang dicari</p></li>
 </ul>
 </section>
 <section id="deret-geometri">
 <h3>Deret Geometri<a class="headerlink" href="#deret-geometri" title="Link to this heading">#</a></h3>
 <p>Deret dengan pola kelipatan tetap.</p>
 <ul class="simple">
-<li><p>Contoh:</p></li>
-<li><p>Rumus suku ke-n:</p></li>
+<li><p>Contoh: 3,6,12,24,48,…</p></li>
+<li><p>Rumus suku ke-n:
+<img alt="img.png" src="_images/deretgeometri.png" /></p></li>
 </ul>
 <p>Di mana:</p>
 <ul class="simple">
-<li><p>: suku pertama</p></li>
-<li><p>: rasio (perbandingan antar suku,</p></li>
-<li><p>: nomor suku yang dicari</p></li>
+<li><p>a: suku pertama</p></li>
+<li><p>r: rasio (perbandingan antar suku,</p></li>
+<li><p>n: nomor suku yang dicari</p></li>
 </ul>
 </section>
 <section id="deret-bilangan-kuadrat">
 <h3>Deret Bilangan Kuadrat<a class="headerlink" href="#deret-bilangan-kuadrat" title="Link to this heading">#</a></h3>
 <p>Deret dengan pola nilai berupa kuadrat bilangan bulat.</p>
 <ul class="simple">
-<li><p>Contoh:</p></li>
-<li><p>Rumus suku ke-n:</p></li>
+<li><p>Contoh: 1,4,9,16,25,…</p></li>
+<li><p>Rumus suku ke-n:
+<img alt="img.png" src="_images/deretkuadrat.png" /></p></li>
 </ul>
 </section>
 <section id="deret-bilangan-kubik">
 <h3>Deret Bilangan Kubik<a class="headerlink" href="#deret-bilangan-kubik" title="Link to this heading">#</a></h3>
 <p>Deret dengan pola nilai berupa kubik bilangan bulat.</p>
 <ul class="simple">
-<li><p>Contoh:</p></li>
-<li><p>Rumus suku ke-n:</p></li>
+<li><p>Contoh: 1,8,27,64,125,…</p></li>
+<li><p>Rumus suku ke-n:
+<img alt="img.png" src="_images/deretkubik.png" /></p></li>
 </ul>
+</section>
+<section id="deret-fibonacci">
+<h3>Deret Fibonacci<a class="headerlink" href="#deret-fibonacci" title="Link to this heading">#</a></h3>
+<p>Deret dengan pola di mana setiap suku merupakan jumlah dua suku sebelumnya.</p>
+<ul class="simple">
+<li><p>Contoh: 0,1,1,2,3,5,8,…</p></li>
+<li><p>Rumus suku ke-n (rekursif):
+<img alt="img.png" src="_images/deretfibonacci.png" /></p></li>
+</ul>
+</section>
+<section id="string">
+<h3>String<a class="headerlink" href="#string" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>String adalah deretan berhingga karakter berbentu a1a2a3a4…an
+Panjang string s adalah jumlah karakter di dalam string tersebut
+Contoh: Informatika adalah string dengan panjang 11 karakter 10100101 adalah string biner dengan panjang 8 bit</p></li>
+<li><p>String kosong dilambangkan dengan $<span class="math notranslate nohighlight">\( \lambda \)</span>$ , panjangnya = 0</p></li>
+</ul>
+<section id="penjumlahan-deretan">
+<h4>Penjumlahan deretan<a class="headerlink" href="#penjumlahan-deretan" title="Link to this heading">#</a></h4>
+<p>Jumlah deretan
+am, am+1, am+2,…,an
+adalah
+am + am+1, + am+2 + … an
+atau dalam notasi sumasi:</p>
+<p>$<span class="math notranslate nohighlight">\( \Sigma_{km}^n \)</span>$ ak</p>
+<ul class="simple">
+<li><p>k adalah index summasi,</p></li>
+<li><p>m adalah batas bawah indeks,</p></li>
+<li><p>n adalah batas atas indeks</p></li>
+</ul>
+<p><img alt="img_1.png" src="_images/img_2.png" /></p>
+<section id="tugas-pembuktian-dari-3-rumus-dibawah">
+<h5>Tugas pembuktian dari 3 rumus dibawah<a class="headerlink" href="#tugas-pembuktian-dari-3-rumus-dibawah" title="Link to this heading">#</a></h5>
+<p>Beberapa sumasi sudah ditemukan rumus penjumlahannya sebagai berikut:</p>
+<p><img alt="img_1.png" src="_images/img_1.png" /></p>
+<p><img alt="img_1.png" src="_images/img_3.png" /></p>
+</section>
+</section>
+</section>
+<section id="sumasi-ganda">
+<h3>Sumasi ganda<a class="headerlink" href="#sumasi-ganda" title="Link to this heading">#</a></h3>
+<p>Di dalam algoritma, kita perlu menghitung berapa kali suatu operasi tertentu dilakukan di dalam sebuah kalang bersarang (nested loop)
+. Penjumlahan semua operasi di dalam kalang bersarang dinyatakan dalam bentuk sumasi ganda.</p>
+<p>Contoh: <img alt="img_1.png" src="_images/img_4.png" /></p>
+<p><img alt="img_1.png" src="_images/img_145.png" /></p>
+<p>Contoh penggunaan: Berapa kali operasi + dilakukan didalam algoritma di bawah ini
+<img alt="img_2.png" src="_images/img_2476.png" /></p>
+<p><img alt="img_1.png" src="_images/img_123.png" /></p>
+<p><img alt="img_1.png" src="_images/img_146.png" /></p>
+</section>
+</section>
+<section id="rekursi">
+<h2>Rekursi<a class="headerlink" href="#rekursi" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Sebuah objek dikatakan <strong>rekursi</strong> <em>(recursive)</em> jika ia didefinisikan dalam terminologi dirinya sendiri.</p></li>
+<li><p>Proses mendefinisikan objek dalam terminologi dirinya sendiri disebut rekursi (recursion).</p></li>
+<li><p>Objek fraktal adalah contoh bentuk rekursif</p></li>
+</ul>
+<p><img alt="img_1.png" src="_images/img_132.png" /></p>
+<section id="fungsi-rekursif">
+<h3>Fungsi rekursif<a class="headerlink" href="#fungsi-rekursif" title="Link to this heading">#</a></h3>
+<p><img alt="img_1.png" src="_images/img_122.png" /></p>
+<p><img alt="img_1.png" src="_images/img_12.png" /></p>
+<p><img alt="img_1.png" src="_images/img_23.png" /></p>
+<p><img alt="img_1.png" src="_images/img_24.png" /></p>
+<p>Contoh 7: Nyatakan n! dalam definisi rekursif
+Solusi: <img alt="img_1.png" src="_images/img_6.png" /></p>
+<p>Misalkan f(n) = n!, maka
+<img alt="img_1.png" src="_images/img_7.png" /></p>
+<p>Menghitung 5! secara rekursif adalah:
+<img alt="img_1.png" src="_images/img_8.png" /></p>
 </section>
 </section>
 </section>
@@ -513,6 +604,19 @@ an = 7 – 3n
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-geometri">Deret Geometri</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-bilangan-kuadrat">Deret Bilangan Kuadrat</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-bilangan-kubik">Deret Bilangan Kubik</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-fibonacci">Deret Fibonacci</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string">String</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#penjumlahan-deretan">Penjumlahan deretan</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#tugas-pembuktian-dari-3-rumus-dibawah">Tugas pembuktian dari 3 rumus dibawah</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sumasi-ganda">Sumasi ganda</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rekursi">Rekursi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-rekursif">Fungsi rekursif</a></li>
 </ul>
 </li>
 </ul>
