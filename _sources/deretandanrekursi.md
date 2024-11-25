@@ -133,3 +133,63 @@ Misalkan f(n) = n!, maka
 
 Menghitung 5! secara rekursif adalah:
 ![img_1.png](img/img_8.png)
+
+#### ALgoritma menghitung faktorial:
+
+function Faktorial (input n:integer) -> integer
+{ mengembalikan nilai n!;
+basis: jika n = 0, maka 0! = 1
+rekuens: jika n > 0, maka n! = n x (n-1)!
+}
+
+DEKLARASI
+
+ALGORITMA:
+```
+if n = 0 then
+   return 1    {basis}
+else
+   return * Faktorial(n-1) {rekuens}
+end
+```
+
+Contoh 8; barisan Fibonacci 0,1,1,2,3,5,8,11,10,... Dapat dinyatakan secara rekursif sebagai berikut:
+
+![img_1.png](img/img_9.png)
+
+Contoh 9: Fungsi (polinom) Chebyshev dinyatakan sebagai
+
+![img_1.png](img/img_10.png)
+
+Contoh 10: Sumasi ![img_1.png](img/img_14.png) didefinisikan secara rekursif sebagai berikut:
+![img_2.png](img/img_13.png)
+
+sehingga ![img_3.png](img/img_11.png)
+
+![img_1.png](img/img_15.png)
+
+Solusi:
+1. ![img_1.png](img/img_16.png)
+sehingga: ![img_2.png](img/img_17.png)
+2. ![img_3.png](img/img_18.png) => ![img_4.png](img/img_19.png)
+
+### Struktur Rekursif
+- Struktur data yang penting dalam komputer adalah pohon biner (binary tree).
+![img_1.png](img/img_26.png)
+
+- simpul (node) pada pohon biner mempunyai paling banyak dua buah anak.
+- Jumlah anak pada setiap simpul bisa 1, 2, atau 0.
+- Simpul yang mempunyai anak disebut simpul cabang (branch node) atau simpul dalam (Interval node)
+- Simpul yang tidak mempunyai anak disebut simpul daun (leave)
+
+#### Pohon biner
+Pohon biner adalah stuktur yang rekursif, sebab setiap simpul mempunyai cabang yang juga berupa pohon. Setiap cabang disebut upapohon (subtree)
+![img_2.png](img/img_25.png)
+
+- Oleh karena itu, pohon daoat didefinisikan secara rekursif sebagi berikut:
+  (i) Basis: kosong adalah pohon biner
+  (ii) Rekurens: Jika T1 dan T2 adalah pohon biner , maka adalah pohon biner
+
+Proses pembentukan pohon biner secara rekursif:
+(i) ![img_3.png](img/img_27.png)
+(ii) ![img_4.png](img/img_28.png)

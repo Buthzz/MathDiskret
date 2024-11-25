@@ -380,7 +380,14 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rekursi">Rekursi</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-rekursif">Fungsi rekursif</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-rekursif">Fungsi rekursif</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritma-menghitung-faktorial">ALgoritma menghitung faktorial:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-rekursif">Struktur Rekursif</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pohon-biner">Pohon biner</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -539,6 +546,61 @@ Solusi: <img alt="img_1.png" src="_images/img_6.png" /></p>
 <img alt="img_1.png" src="_images/img_7.png" /></p>
 <p>Menghitung 5! secara rekursif adalah:
 <img alt="img_1.png" src="_images/img_8.png" /></p>
+<section id="algoritma-menghitung-faktorial">
+<h4>ALgoritma menghitung faktorial:<a class="headerlink" href="#algoritma-menghitung-faktorial" title="Link to this heading">#</a></h4>
+<p>function Faktorial (input n:integer) -&gt; integer
+{ mengembalikan nilai n!;
+basis: jika n = 0, maka 0! = 1
+rekuens: jika n &gt; 0, maka n! = n x (n-1)!
+}</p>
+<p>DEKLARASI</p>
+<p>ALGORITMA:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span> <span class="n">then</span>
+   <span class="k">return</span> <span class="mi">1</span>    <span class="p">{</span><span class="n">basis</span><span class="p">}</span>
+<span class="k">else</span>
+   <span class="k">return</span> <span class="o">*</span> <span class="n">Faktorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span><span class="n">rekuens</span><span class="p">}</span>
+<span class="n">end</span>
+</pre></div>
+</div>
+<p>Contoh 8; barisan Fibonacci 0,1,1,2,3,5,8,11,10,… Dapat dinyatakan secara rekursif sebagai berikut:</p>
+<p><img alt="img_1.png" src="_images/img_9.png" /></p>
+<p>Contoh 9: Fungsi (polinom) Chebyshev dinyatakan sebagai</p>
+<p><img alt="img_1.png" src="_images/img_10.png" /></p>
+<p>Contoh 10: Sumasi <img alt="img_1.png" src="_images/img_14.png" /> didefinisikan secara rekursif sebagai berikut:
+<img alt="img_2.png" src="_images/img_13.png" /></p>
+<p>sehingga <img alt="img_3.png" src="_images/img_11.png" /></p>
+<p><img alt="img_1.png" src="_images/img_15.png" /></p>
+<p>Solusi:</p>
+<ol class="arabic simple">
+<li><p><img alt="img_1.png" src="_images/img_16.png" />
+sehingga: <img alt="img_2.png" src="_images/img_17.png" /></p></li>
+<li><p><img alt="img_3.png" src="_images/img_18.png" /> =&gt; <img alt="img_4.png" src="_images/img_19.png" /></p></li>
+</ol>
+</section>
+</section>
+<section id="struktur-rekursif">
+<h3>Struktur Rekursif<a class="headerlink" href="#struktur-rekursif" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Struktur data yang penting dalam komputer adalah pohon biner (binary tree).
+<img alt="img_1.png" src="_images/img_26.png" /></p></li>
+<li><p>simpul (node) pada pohon biner mempunyai paling banyak dua buah anak.</p></li>
+<li><p>Jumlah anak pada setiap simpul bisa 1, 2, atau 0.</p></li>
+<li><p>Simpul yang mempunyai anak disebut simpul cabang (branch node) atau simpul dalam (Interval node)</p></li>
+<li><p>Simpul yang tidak mempunyai anak disebut simpul daun (leave)</p></li>
+</ul>
+<section id="pohon-biner">
+<h4>Pohon biner<a class="headerlink" href="#pohon-biner" title="Link to this heading">#</a></h4>
+<p>Pohon biner adalah stuktur yang rekursif, sebab setiap simpul mempunyai cabang yang juga berupa pohon. Setiap cabang disebut upapohon (subtree)
+<img alt="img_2.png" src="_images/img_25.png" /></p>
+<ul class="simple">
+<li><p>Oleh karena itu, pohon daoat didefinisikan secara rekursif sebagi berikut:
+(i) Basis: kosong adalah pohon biner
+(ii) Rekurens: Jika T1 dan T2 adalah pohon biner , maka adalah pohon biner</p></li>
+</ul>
+<p>Proses pembentukan pohon biner secara rekursif:
+(i) <img alt="img_3.png" src="_images/img_27.png" />
+(ii) <img alt="img_4.png" src="_images/img_28.png" /></p>
+</section>
 </section>
 </section>
 </section>
@@ -616,7 +678,14 @@ Solusi: <img alt="img_1.png" src="_images/img_6.png" /></p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rekursi">Rekursi</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-rekursif">Fungsi rekursif</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-rekursif">Fungsi rekursif</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritma-menghitung-faktorial">ALgoritma menghitung faktorial:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-rekursif">Struktur Rekursif</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pohon-biner">Pohon biner</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
