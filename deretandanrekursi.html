@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>MathDiskret &#8212; My sample book</title>
+    <title>Deretan dan Rekursi &#8212; My sample book</title>
   
   
   
@@ -60,9 +60,12 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'deretandanrekursi';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="cek" href="graph.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -113,8 +116,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -168,13 +169,13 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="algoritma.html">Algoritma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="himpunan.html">HIMPUNAN</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logika.html">Logika Matematika</a></li>
 <li class="toctree-l1"><a class="reference internal" href="boolean.html">Aljabar Boolean &amp; Gerbang Logika</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graph.html">cek</a></li>
-<li class="toctree-l1"><a class="reference internal" href="deretandanrekursi.html">Deretan dan Rekursi</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Deretan dan Rekursi</a></li>
 </ul>
 
     </div>
@@ -246,7 +247,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fderetandanrekursi.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -276,7 +277,7 @@
       
       
       
-      <li><a href="_sources/README.md" target="_blank"
+      <li><a href="_sources/deretandanrekursi.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -352,7 +353,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>MathDiskret</h1>
+    <h1>Deretan dan Rekursi</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -362,10 +363,19 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MathDiskret</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">MathDiskret</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deretan-sequence">Deretan (Sequence)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-aritmetika">Deret Aritmetika</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-geometri">Deret Geometri</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-bilangan-kuadrat">Deret Bilangan Kuadrat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-bilangan-kubik">Deret Bilangan Kubik</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-fibonacci">Deret Fibonacci</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string">String</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#penjumlahan-deretan">Penjumlahan deretan</a></li>
 </ul>
-
+</li>
+</ul>
+</li>
+</ul>
             </nav>
         </div>
     </div>
@@ -376,11 +386,113 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="mathdiskret">
-<h1>MathDiskret<a class="headerlink" href="#mathdiskret" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="deretan-dan-rekursi">
+<h1>Deretan dan Rekursi<a class="headerlink" href="#deretan-dan-rekursi" title="Link to this heading">#</a></h1>
+<section id="deretan-sequence">
+<h2>Deretan (Sequence)<a class="headerlink" href="#deretan-sequence" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Deretan adalah suatu urutan atau susunan elemen atau objek yang disusun secara teratur berdasarkan suatu aturan tertentu. Elemen dalam deretan biasanya berupa angka, huruf, simbol, atau objek lainnya, dan urutannya dapat didasarkan pada pola, nilai, atau hubungan tertentu</p></li>
+<li><p>Definisi: Sebuah deretan adalah fungsi dari subset suatu himpunan bilangan bulat (biasanya N atau P) ke sebuah himpunan S.</p></li>
+</ul>
+<p>N = {1, 2, 3, 4, … } <br>
+S misalnya {2, 4, 6, 8, …},   {1/3, 1/5, 1/7, …},  dsb</p>
+<ul class="simple">
+<li><p>Notasi deretan: {an}</p></li>
+</ul>
+<p>Deretan umumnya dinyatakan dalam suatu formula, misalnya:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>an = 2 n
+an = 1/n
+an = 7 – 3n
+</pre></div>
+</div>
+<p>Dalam konteks matematika, deretan sering merujuk pada barisan bilangan, yaitu kumpulan bilangan yang disusun dalam suatu pola tertentu. Misalnya:</p>
+<ol class="arabic simple">
+<li><p>Deretan bilangan ganjil: 1,3,5,7,…</p></li>
+<li><p>Deretan bilangan genap: 2,4,6,8,…</p></li>
+<li><p>Deretan bilangan yang membentuk deret aritmetika: 3,6,9,12….</p></li>
+</ol>
+<p><strong>Contoh-contoh deretan dan formulanya:</strong></p>
+<section id="deret-aritmetika">
+<h3>Deret Aritmetika<a class="headerlink" href="#deret-aritmetika" title="Link to this heading">#</a></h3>
+<p>Deret dengan pola kenaikan atau penurunan tetap.</p>
+<ul class="simple">
+<li><p>Contoh: 2,5,8,11,14,…</p></li>
+<li><p>Rumus suku ke-n:
+<img alt="img.png" src="_images/deretaritmatika.png" /></p></li>
+</ul>
+<p>Di mana:</p>
+<ul class="simple">
+<li><p>a: suku pertama</p></li>
+<li><p>b: beda (selisih antar suku</p></li>
+<li><p>n: nomor suku yang dicari</p></li>
+</ul>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>MathDiskret<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="deret-geometri">
+<h3>Deret Geometri<a class="headerlink" href="#deret-geometri" title="Link to this heading">#</a></h3>
+<p>Deret dengan pola kelipatan tetap.</p>
+<ul class="simple">
+<li><p>Contoh: 3,6,12,24,48,…</p></li>
+<li><p>Rumus suku ke-n:
+<img alt="img.png" src="_images/deretgeometri.png" /></p></li>
+</ul>
+<p>Di mana:</p>
+<ul class="simple">
+<li><p>a: suku pertama</p></li>
+<li><p>r: rasio (perbandingan antar suku,</p></li>
+<li><p>n: nomor suku yang dicari</p></li>
+</ul>
+</section>
+<section id="deret-bilangan-kuadrat">
+<h3>Deret Bilangan Kuadrat<a class="headerlink" href="#deret-bilangan-kuadrat" title="Link to this heading">#</a></h3>
+<p>Deret dengan pola nilai berupa kuadrat bilangan bulat.</p>
+<ul class="simple">
+<li><p>Contoh: 1,4,9,16,25,…</p></li>
+<li><p>Rumus suku ke-n:
+<img alt="img.png" src="_images/deretkuadrat.png" /></p></li>
+</ul>
+</section>
+<section id="deret-bilangan-kubik">
+<h3>Deret Bilangan Kubik<a class="headerlink" href="#deret-bilangan-kubik" title="Link to this heading">#</a></h3>
+<p>Deret dengan pola nilai berupa kubik bilangan bulat.</p>
+<ul class="simple">
+<li><p>Contoh: 1,8,27,64,125,…</p></li>
+<li><p>Rumus suku ke-n:
+<img alt="img.png" src="_images/deretkubik.png" /></p></li>
+</ul>
+</section>
+<section id="deret-fibonacci">
+<h3>Deret Fibonacci<a class="headerlink" href="#deret-fibonacci" title="Link to this heading">#</a></h3>
+<p>Deret dengan pola di mana setiap suku merupakan jumlah dua suku sebelumnya.</p>
+<ul class="simple">
+<li><p>Contoh: 0,1,1,2,3,5,8,…</p></li>
+<li><p>Rumus suku ke-n (rekursif):
+<img alt="img.png" src="_images/deretfibonacci.png" /></p></li>
+</ul>
+</section>
+<section id="string">
+<h3>String<a class="headerlink" href="#string" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>String adalah deretan berhingga karakter berbentu a1a2a3a4…an
+Panjang string s adalah jumlah karakter di dalam string tersebut
+Contoh: Informatika adalah string dengan panjang 11 karakter 10100101 adalah string biner dengan panjang 8 bit</p></li>
+<li><p>String kosong dilambangkan dengan $<span class="math notranslate nohighlight">\( \lambda \)</span>$ , panjangnya = 0</p></li>
+</ul>
+<section id="penjumlahan-deretan">
+<h4>Penjumlahan deretan<a class="headerlink" href="#penjumlahan-deretan" title="Link to this heading">#</a></h4>
+<p>Jumlah deretan
+am, am+1, am+2,…,an
+adalah
+am + am+1, + am+2 + … an
+atau dalam notasi sumasi:</p>
+<p>$<span class="math notranslate nohighlight">\( \Sigma_{km}^n \)</span>$ ak</p>
+<ul class="simple">
+<li><p>k adalah index summasi,</p></li>
+<li><p>m adalah batas bawah indeks,</p></li>
+<li><p>n adalah batas atas indeks</p></li>
+</ul>
+</section>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -413,6 +525,15 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="graph.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">cek</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -430,10 +551,19 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">MathDiskret</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">MathDiskret</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deretan-sequence">Deretan (Sequence)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-aritmetika">Deret Aritmetika</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-geometri">Deret Geometri</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-bilangan-kuadrat">Deret Bilangan Kuadrat</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-bilangan-kubik">Deret Bilangan Kubik</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deret-fibonacci">Deret Fibonacci</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string">String</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#penjumlahan-deretan">Penjumlahan deretan</a></li>
 </ul>
-
+</li>
+</ul>
+</li>
+</ul>
   </nav></div>
 
 </div></div>
