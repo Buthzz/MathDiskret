@@ -61,7 +61,6 @@ $$ U_n = n^3 $$
 Deret dengan pola di mana setiap suku merupakan jumlah dua suku sebelumnya.
 - Contoh: 0,1,1,2,3,5,8,...
 - Rumus suku ke-n (rekursif):
-![img.png](img/deretfibonacci.png)
 $$ F_n = F_{n-1} + F_{n-2}, F_0 = 0, F_1=1$$
 
 
