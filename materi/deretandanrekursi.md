@@ -154,24 +154,57 @@ $$ \sum_{i=0}^{3} \sum_{j=0}^{2} i $$
 
 ### Fungsi rekursif
 
-![img_1.png](img/img_122.png)
+- Fungsi rekursif didefinisikan oleh dua bagian:
+  - (i) Basis
+    - Bagian yang berisi nilai fungsi yang terdifini secara eksplisit
+    - Bagian ini juga sekaligus menghentikan rekursi (dan memberikan sebuah nilau yang terdefinisi pada fungsi rekursif).
+  - (ii) Rekurens
+    - Bagian ini mendifinisikan fungsi dalam termininologi sendiri.
+    - Berisi kaidah untuk menemukan nilai fungsi pada suatu input dari nilai-nilai lainnya pada input yang lebih kecil.
 
-![img_1.png](img/img_12.png)
+Contoh 6: Mislahkan _f_ didefinisikan secara rekursif sbb
 
-![img_1.png](img/img_23.png)
+$$f(n) = \begin{cases}
+3 & \text, n = 0 \\
+2f(n-1) + 4 & \text,  n > 0
+\end{cases}$$
 
-![img_1.png](img/img_24.png)
+Tentukan nilai $f(4)!$
 
-Contoh 7: Nyatakan n! dalam definisi rekursif
-Solusi: ![img_1.png](img/img_6.png)
+Solusi:
+$$f(4) = 2f(3) + 4$$
+$$= 2(2f(2) + 4) + 4$$
+$$= 2(2(2f(1) + 4) + 4) + 4$$
+$$= 2(2(2(2f(0) + 4) + 4) + 4) + 4$$
+$$= 2(2(2(2*3 + 4) + 4) + 4) + 4$$
+$$= 2(2(2(10) + 4) + 4) + 4$$
+$$= 2(2(24) + 4) + 4$$
+$$= 2(52) + 4$$
+$$= 108$$
 
+Cara lain menghitungnya:
+
+$$f(0) = 3$$
+$$f(1) = 2f(0) + 4 = 2 \cdot 3 + 4 = 10$$
+$$f(2) = 2f(1) + 4 = 2 \cdot 10 + 4 = 24$$
+$$f(3) = 2f(2) + 4 = 2 \cdot 24 + 4 = 52$$
+$$f(4) = 2f(3) + 4 = 2 \cdot 52 + 4 = 108$$
+
+Jadi, $$f(4) = 108.$$
+
+Contoh 7: Nyatakan _n_! dalam definisi rekursif <br>
+Solusi:
+$$ n! = \underbrace{1 \times 2 \times 3 \times ... \times (n-1)} \times n = (n-1)! \times n $$
 Misalkan f(n) = n!, maka
-![img_1.png](img/img_7.png)
+$$ n! = \begin{cases}
+1 & \text{jika } n = 0 \\
+n \cdot (n-1)! & \text{jika } n > 0
+\end{cases} $$
 
 Menghitung 5! secara rekursif adalah:
-![img_1.png](img/img_8.png)
+$$ 5! = 5 \cdot 4! = 5 \cdot 4 \cdot 3! = 5 \cdot 4 \cdot 3 \cdot 2! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 \cdot 0! = 120 $$
 
-#### ALgoritma menghitung faktorial:
+#### Algoritma menghitung faktorial:
 
 function Faktorial (input n:integer) -> integer
 { mengembalikan nilai n!;
@@ -190,20 +223,37 @@ else
 end
 ```
 
-Contoh 8; barisan Fibonacci 0,1,1,2,3,5,8,11,10,... Dapat dinyatakan secara rekursif sebagai berikut:
-
-![img_1.png](img/img_9.png)
-
+Contoh 8: barisan Fibonacci 0,1,1,2,3,5,8,11,10,... Dapat dinyatakan secara rekursif sebagai berikut:
+ $$ f_n = \begin{cases}
+0 & , n=0 \\
+1 & , n=1 \\
+f_{n-1} + f_{n-2} & , n>1
+\end{cases}
+$$
 Contoh 9: Fungsi (polinom) Chebyshev dinyatakan sebagai
+$$
+T(n,x) = \begin{cases}
+1 & , n=0 \\
+x & , n=1 \\
+2x \cdot T(n-1,x) - T(n-2,x) & , n>1
+\end{cases}
+$$
 
-![img_1.png](img/img_10.png)
+Contoh 10: Sumasi $\sum_{k=0}^{n} a_k$ didefinisikan secara rekursif sebagai berikut:
 
-Contoh 10: Sumasi ![img_1.png](img/img_14.png) didefinisikan secara rekursif sebagai berikut:
-![img_2.png](img/img_13.png)
+$$\sum_{k=0}^{n} a_k = a_0 + a_1 + a_2 + ... + a_{n-1} + a_n$$
+$$= (a_0 + a_1 + a_2 + ... + a_{n-1}) + a_n$$
+$$= \left(\sum_{k=0}^{n-1} a_k\right) + a_n$$
 
-sehingga ![img_3.png](img/img_11.png)
+sehingga
 
-![img_1.png](img/img_15.png)
+$$\sum_{k=0}^{n} a_k = \begin{cases}
+a_0 & , n=0 \\
+\left(\sum_{k=0}^{n-1} a_k\right) + a_n & , n>0
+\end{cases}$$
+
+Latihan
+1. Definisikan $ a{^n} $ secara
 
 Solusi:
 1. ![img_1.png](img/img_16.png)
