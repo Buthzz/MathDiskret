@@ -27,7 +27,7 @@ Dalam konteks matematika, deretan sering merujuk pada barisan bilangan, yaitu ku
 Deret dengan pola kenaikan atau penurunan tetap.
 - Contoh: 2,5,8,11,14,...
 - Rumus suku ke-n:
-![img.png](img/deretaritmatika.png)
+$$ U_n = a + (n - 1) \cdot b$$
 
 Di mana:
 - a: suku pertama 
@@ -38,7 +38,7 @@ Di mana:
 Deret dengan pola kelipatan tetap.
 - Contoh: 3,6,12,24,48,... 
 - Rumus suku ke-n:
-![img.png](img/deretgeometri.png)
+$$ U_n = a \cdot r^{(n-1)} $$
 
 Di mana:
 - a: suku pertama 
@@ -49,63 +49,100 @@ Di mana:
 Deret dengan pola nilai berupa kuadrat bilangan bulat.
 - Contoh: 1,4,9,16,25,...
 - Rumus suku ke-n:
-![img.png](img/deretkuadrat.png)
+$$ U_n = n^2 $$
 
 ### Deret Bilangan Kubik
 Deret dengan pola nilai berupa kubik bilangan bulat.
 - Contoh: 1,8,27,64,125,...
 - Rumus suku ke-n:
-![img.png](img/deretkubik.png)
+$$ U_n = n^3 $$
 
 ### Deret Fibonacci
 Deret dengan pola di mana setiap suku merupakan jumlah dua suku sebelumnya.
 - Contoh: 0,1,1,2,3,5,8,...
 - Rumus suku ke-n (rekursif):
-![img.png](img/deretfibonacci.png)
+$$ F_n = F_{n-1} + F_{n-2}, F_0 = 0, F_1=1$$
 
-### String
-- String adalah deretan berhingga karakter berbentu a1a2a3a4...an
-Panjang string s adalah jumlah karakter di dalam string tersebut
-Contoh: Informatika adalah string dengan panjang 11 karakter 10100101 adalah string biner dengan panjang 8 bit
+
+## String
+- String adalah deretan berhingga karakter berbentuk
+$$ a_1a_2a_3a_4...a_n $$
+Panjang string S adalah jumlah karakter di dalam string tersebut
+- Contoh: Informatika adalah string dengan panjang 11 karakter 10100101 adalah string biner dengan panjang 8 bit
 - String kosong dilambangkan dengan $$ \lambda $$ , panjangnya = 0
 
 #### Penjumlahan deretan
 Jumlah deretan
-am, am+1, am+2,...,an
+$$ a_m, a_{m+1}, a_{m+2},...,a_n $$
 adalah
-am + am+1, + am+2 + ... an
+$$ a_m + a_{m+1}, + a_{m+2} + ... + a_n $$
 atau dalam notasi sumasi:
 
-$$ \Sigma_{km}^n $$ ak
+$$ \Sigma_{k=m}^n  a_k $$
 
-- k adalah index summasi,
-- m adalah batas bawah indeks,
-- n adalah batas atas indeks
+- _k_ adalah index summasi,
+- _m_ adalah batas bawah indeks,
+- _n_ adalah batas atas indeks
 
-![img_1.png](img/img_2.png)
+Contoh 2: Berapa nilai: $$ \sum_{k=1}^{5} k^2 $$
+Jawaban:
+$$ \sum_{k=1}^{5} k^2 = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 = 1 + 4 + 9 + 16 + 25 = 55 $$
 
+Contoh 3: Batas bawah sumasi kadangkala perlu digeser agar dapat dijumlahkan dengan sumasi lain yang memiliki batas bawah berbeda. Pada contoh 2 diatas batas bawah digeser dari 1 menjadi 0, akibatnya:
+$$ \sum_{k=1}^{5} k^2 = \sum_{k=0}^{4} (k+1)^2 $$
+
+Contoh 4: Sumasi dapat di pecah dengan membagi dua indeksnya, misalnya
+$$ \sum_{k=1}^{100} k^2 = \sum_{k=1}^{49} k^2 + \sum_{k=50}^{100} k^2 $$
 [//]: # (Slide 12)
 ##### Tugas pembuktian dari 3 rumus dibawah
 Beberapa sumasi sudah ditemukan rumus penjumlahannya sebagai berikut:
 
 ![img_1.png](img/img_1.png)
 
-![img_1.png](img/img_3.png)
+Contoh 5: Hitung nilai $$  \sum_{k=50}^{100} k^2 $$
+Jawaban:$$ \sum_{k=1}^{100} k^2 = \sum_{k=1}^{49} k^2 + \sum_{k=50}^{100} k^2 $$
+
+$$ \sum_{k=50}^{100} k^2 = \sum_{k=1}^{100} k^2 - \sum_{k=1}^{49} k^2 $$
+
+Gunakan rumus:
+$$ \sum_{k=1}^{n} k^2 = \frac{n(n+1)(2n+1)}{6} $$
+$$ \sum_{k=50}^{100} k^2 = \frac{100(101)(201)}{6} - \frac{49(50)(99)}{6} = 338,350 - 40,425 = 297,925 $$
+
 
 ### Sumasi ganda
 Di dalam algoritma, kita perlu menghitung berapa kali suatu operasi tertentu dilakukan di dalam sebuah kalang bersarang (nested loop)
 . Penjumlahan semua operasi di dalam kalang bersarang dinyatakan dalam bentuk sumasi ganda.
 
-Contoh: ![img_1.png](img/img_4.png)
+$$ \sum_{i=1}^{4} \sum_{j=1}^3 ij $$
 
-![img_1.png](img/img_145.png)
+Untuk menghitung sumasi ganda, mula-mula ekspansi sumasi terdalam, lalu dilanjutkan dengan sumasi terluar:
+$$ \sum_{i=1}^{4} \sum_{j=1}^{3} ij = \sum_{i=1}^{4} (i + 2i + 3i) = \sum_{i=1}^{4} 6i = 6 + 12 + 18 + 24 = 60 $$
 
 Contoh penggunaan: Berapa kali operasi + dilakukan didalam algoritma di bawah ini
-![img_2.png](img/img_2476.png)
-
-![img_1.png](img/img_123.png)
-
-![img_1.png](img/img_146.png)
+```
+x = 0
+for j = 1 to 10 do
+    for k = 1 to j do
+        x = x + 2
+    end for
+end for
+```
+Penyelesaian: <br>
+Operasi + terdapat di dalam pernyataan x = x + 2<br>
+Operasi ini di lakukan satu kali pada setiap pengulangan<br>
+Jumlah seluruh operasi + adalah:
+$$ t = \sum_{j=1}^{10} \sum_{k=1}^{j} 1 \\
+   = \sum_{j=1}^{10} (1 + 1 + ... + 1 \text{ sebanyak } j \text{ kali}) \\
+   = \sum_{j=1}^{10} j \\
+   = \frac{10(10+1)}{2} = 55 
+$$
+Latihan:
+1. Tentukan nilai
+$$ \sum_{k=1}^{8} 2^k + \sum_{k=2}^{8} (-3)^k $$
+2. Twntukan nilai
+$$ \sum_{i=0}^{2} \sum_{j=0}^{3} (2i + 3j) $$
+3. Tentukan nilai
+$$ \sum_{i=0}^{3} \sum_{j=0}^{2} i $$
 
 ## Rekursi
 
@@ -117,24 +154,57 @@ Contoh penggunaan: Berapa kali operasi + dilakukan didalam algoritma di bawah in
 
 ### Fungsi rekursif
 
-![img_1.png](img/img_122.png)
+- Fungsi rekursif didefinisikan oleh dua bagian:
+  - (i) Basis
+    - Bagian yang berisi nilai fungsi yang terdifini secara eksplisit
+    - Bagian ini juga sekaligus menghentikan rekursi (dan memberikan sebuah nilau yang terdefinisi pada fungsi rekursif).
+  - (ii) Rekurens
+    - Bagian ini mendifinisikan fungsi dalam termininologi sendiri.
+    - Berisi kaidah untuk menemukan nilai fungsi pada suatu input dari nilai-nilai lainnya pada input yang lebih kecil.
 
-![img_1.png](img/img_12.png)
+Contoh 6: Mislahkan _f_ didefinisikan secara rekursif sbb
 
-![img_1.png](img/img_23.png)
+$$f(n) = \begin{cases}
+3 & \text, n = 0 \\
+2f(n-1) + 4 & \text,  n > 0
+\end{cases}$$
 
-![img_1.png](img/img_24.png)
+Tentukan nilai $f(4)!$
 
-Contoh 7: Nyatakan n! dalam definisi rekursif
-Solusi: ![img_1.png](img/img_6.png)
+Solusi:
+$$f(4) = 2f(3) + 4$$
+$$= 2(2f(2) + 4) + 4$$
+$$= 2(2(2f(1) + 4) + 4) + 4$$
+$$= 2(2(2(2f(0) + 4) + 4) + 4) + 4$$
+$$= 2(2(2(2*3 + 4) + 4) + 4) + 4$$
+$$= 2(2(2(10) + 4) + 4) + 4$$
+$$= 2(2(24) + 4) + 4$$
+$$= 2(52) + 4$$
+$$= 108$$
 
+Cara lain menghitungnya:
+
+$$f(0) = 3$$
+$$f(1) = 2f(0) + 4 = 2 \cdot 3 + 4 = 10$$
+$$f(2) = 2f(1) + 4 = 2 \cdot 10 + 4 = 24$$
+$$f(3) = 2f(2) + 4 = 2 \cdot 24 + 4 = 52$$
+$$f(4) = 2f(3) + 4 = 2 \cdot 52 + 4 = 108$$
+
+Jadi, $$f(4) = 108.$$
+
+Contoh 7: Nyatakan _n_! dalam definisi rekursif <br>
+Solusi:
+$$ n! = \underbrace{1 \times 2 \times 3 \times ... \times (n-1)} \times n = (n-1)! \times n $$
 Misalkan f(n) = n!, maka
-![img_1.png](img/img_7.png)
+$$ n! = \begin{cases}
+1 & \text{jika } n = 0 \\
+n \cdot (n-1)! & \text{jika } n > 0
+\end{cases} $$
 
 Menghitung 5! secara rekursif adalah:
-![img_1.png](img/img_8.png)
+$$ 5! = 5 \cdot 4! = 5 \cdot 4 \cdot 3! = 5 \cdot 4 \cdot 3 \cdot 2! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 \cdot 0! = 120 $$
 
-#### ALgoritma menghitung faktorial:
+#### Algoritma menghitung faktorial:
 
 function Faktorial (input n:integer) -> integer
 { mengembalikan nilai n!;
@@ -153,20 +223,37 @@ else
 end
 ```
 
-Contoh 8; barisan Fibonacci 0,1,1,2,3,5,8,11,10,... Dapat dinyatakan secara rekursif sebagai berikut:
-
-![img_1.png](img/img_9.png)
-
+Contoh 8: barisan Fibonacci 0,1,1,2,3,5,8,11,10,... Dapat dinyatakan secara rekursif sebagai berikut:
+ $$ f_n = \begin{cases}
+0 & , n=0 \\
+1 & , n=1 \\
+f_{n-1} + f_{n-2} & , n>1
+\end{cases}
+$$
 Contoh 9: Fungsi (polinom) Chebyshev dinyatakan sebagai
+$$
+T(n,x) = \begin{cases}
+1 & , n=0 \\
+x & , n=1 \\
+2x \cdot T(n-1,x) - T(n-2,x) & , n>1
+\end{cases}
+$$
 
-![img_1.png](img/img_10.png)
+Contoh 10: Sumasi $\sum_{k=0}^{n} a_k$ didefinisikan secara rekursif sebagai berikut:
 
-Contoh 10: Sumasi ![img_1.png](img/img_14.png) didefinisikan secara rekursif sebagai berikut:
-![img_2.png](img/img_13.png)
+$$\sum_{k=0}^{n} a_k = a_0 + a_1 + a_2 + ... + a_{n-1} + a_n$$
+$$= (a_0 + a_1 + a_2 + ... + a_{n-1}) + a_n$$
+$$= \left(\sum_{k=0}^{n-1} a_k\right) + a_n$$
 
-sehingga ![img_3.png](img/img_11.png)
+sehingga
 
-![img_1.png](img/img_15.png)
+$$\sum_{k=0}^{n} a_k = \begin{cases}
+a_0 & , n=0 \\
+\left(\sum_{k=0}^{n-1} a_k\right) + a_n & , n>0
+\end{cases}$$
+
+Latihan
+1. Definisikan $ a{^n} $ secara
 
 Solusi:
 1. ![img_1.png](img/img_16.png)
