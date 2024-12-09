@@ -1,4 +1,4 @@
-# Algoritma
+# ALGORITMA
 
 ## Definisi Algoritma
 Algoritma adalah Runtutan pengambilan putusan secara logis 

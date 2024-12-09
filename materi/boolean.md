@@ -19,7 +19,7 @@ a. Komutatif
  $$ A + B =  B + A$$
  $$ A . B =  B . A$$
 
-b, Asosiatif
+b. Asosiatif
 
 
 ### Definisi gerbang logika
