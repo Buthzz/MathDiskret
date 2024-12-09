@@ -2,7 +2,7 @@
 Probabilitas diskret adalah cabang teori probabilitas yang berhubungan dengan peristiwa atau variabel yang memiliki jumlah terbatas atau dapat dihitung. Dalam konteks ini, kita fokus pada perhitungan probabilitas berbasis data terbatas dan diskret.
 
 Rumus probabilitas dasar dinyatakan sebagai:
-$$P(A) = \frac{\text{Jumlah kasus yang mengandung A}}{\text{Total jumlah kasus}}$$
+$P(A) = \frac{\text{Jumlah kasus yang mengandung A}}{\text{Total jumlah kasus}}$
 
 ### Bagaimana kemungkinan/probabilitas usia paruh baya tekanan darah sangat tinggi  kemungkinan penyakit Hipertensi (H) atau Tidak (T)
 
