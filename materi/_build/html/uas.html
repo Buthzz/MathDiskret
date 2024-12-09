@@ -366,7 +366,10 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logika-matematika">Logika matematika</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph">Graph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph">Graph</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasilnya">Hasilnya:</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -604,14 +607,18 @@
 \[ Closeness Centrality (node i) = \frac{1}{\sum \frac{jarak(i,j)}{n-1}} \]</div>
 <div class="math notranslate nohighlight">
 \[ Betweenness Centrality (node i) = \sum \frac{\sigma_{st}(i)}{\sigma_{st}} \]</div>
-<p>Hasilnya:</p>
+<section id="hasilnya">
+<h3>Hasilnya:<a class="headerlink" href="#hasilnya" title="Link to this heading">#</a></h3>
+<p><img alt="image" src="_images/uas.jpg" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Kode pythonnya</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 
+<span class="c1"># Add nodes</span>
 <span class="n">nodes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">]</span>
 <span class="n">g</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
 
@@ -625,16 +632,20 @@
 <span class="n">g</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">)</span>
 
 <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;img/uas.png&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil perhitungannya: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Closeness centrality: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Betweenness centrality: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">g</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2f3988be56e4e52eb76ad2240b8a98666f06fd135f345fe59e6a646f131c9ae9.png" src="_images/2f3988be56e4e52eb76ad2240b8a98666f06fd135f345fe59e6a646f131c9ae9.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Closeness centrality: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil perhitungannya: 
+
+Closeness centrality: 
  {&#39;A&#39;: 0.5555555555555556, &#39;B&#39;: 0.7142857142857143, &#39;C&#39;: 0.7142857142857143, &#39;D&#39;: 0.7142857142857143, &#39;E&#39;: 0.7142857142857143, &#39;F&#39;: 0.5555555555555556}
 Betweenness centrality: 
  {&#39;A&#39;: 0.03333333333333333, &#39;B&#39;: 0.18333333333333332, &#39;C&#39;: 0.18333333333333335, &#39;D&#39;: 0.18333333333333332, &#39;E&#39;: 0.18333333333333335, &#39;F&#39;: 0.03333333333333333}
@@ -642,6 +653,7 @@ Betweenness centrality:
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -702,7 +714,10 @@ Betweenness centrality:
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logika-matematika">Logika matematika</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph">Graph</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graph">Graph</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hasilnya">Hasilnya:</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
