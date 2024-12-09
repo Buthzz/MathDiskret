@@ -1,0 +1,764 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Probabilitas Diskrit &amp; Probabilitas Bayesian &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'probabilitas';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Deretan dan Rekursi" href="deretandanrekursi.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="My sample book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    MATEMATIKA DISKRET
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="algoritma.html">Algoritma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="himpunan.html">HIMPUNAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logika.html">Logika Matematika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="boolean.html">Aljabar Boolean &amp; Gerbang Logika</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph.html">Centrality Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deretandanrekursi.html">Deretan dan Rekursi</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Probabilitas Diskrit &amp; Probabilitas Bayesian</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fprobabilitas.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/probabilitas.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Probabilitas Diskrit & Probabilitas Bayesian</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagaimana-kemungkinan-probabilitas-usia-paruh-baya-tekanan-darah-sangat-tinggi-kemungkinan-penyakit-hipertensi-h-atau-tidak-t">Bagaimana kemungkinan/probabilitas usia paruh baya tekanan darah sangat tinggi  kemungkinan penyakit Hipertensi (H) atau Tidak (T)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasannya">Penjelasannya:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-bayes">Teorema Bayes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Penjelasannya:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#komponen-utama">Komponen Utama:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi-praktis">Interpretasi Praktis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-naive-bayes">Rumus Naive Bayes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kasus-hipertensi-analisis-probabilitas-lanjut">Kasus Hipertensi: Analisis Probabilitas Lanjut</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Penjelasannya:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catatan-penting-dalam-probabilitas">Catatan Penting dalam Probabilitas</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#batasan-dan-pertimbangan">Batasan dan Pertimbangan</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-praktis">Aplikasi Praktis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="probabilitas-diskrit-probabilitas-bayesian">
+<h1>Probabilitas Diskrit &amp; Probabilitas Bayesian<a class="headerlink" href="#probabilitas-diskrit-probabilitas-bayesian" title="Link to this heading">#</a></h1>
+<p>Probabilitas diskret adalah cabang teori probabilitas yang berhubungan dengan peristiwa atau variabel yang memiliki jumlah terbatas atau dapat dihitung. Dalam konteks ini, kita fokus pada perhitungan probabilitas berbasis data terbatas dan diskret.</p>
+<p>Rumus probabilitas dasar dinyatakan sebagai:
+$<span class="math notranslate nohighlight">\(P(A) = \frac{\text{Jumlah kasus yang mengandung A}}{\text{Total jumlah kasus}}\)</span>$</p>
+<section id="bagaimana-kemungkinan-probabilitas-usia-paruh-baya-tekanan-darah-sangat-tinggi-kemungkinan-penyakit-hipertensi-h-atau-tidak-t">
+<h2>Bagaimana kemungkinan/probabilitas usia paruh baya tekanan darah sangat tinggi  kemungkinan penyakit Hipertensi (H) atau Tidak (T)<a class="headerlink" href="#bagaimana-kemungkinan-probabilitas-usia-paruh-baya-tekanan-darah-sangat-tinggi-kemungkinan-penyakit-hipertensi-h-atau-tidak-t" title="Link to this heading">#</a></h2>
+<section id="penjelasannya">
+<h3>Penjelasannya:<a class="headerlink" href="#penjelasannya" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>Usia</p></th>
+<th class="head"><p>Tekanan Darah</p></th>
+<th class="head"><p>Penyakit (H/T)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Muda</p></td>
+<td><p>Normal</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Muda</p></td>
+<td><p>Tinggi</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Paruh baya</p></td>
+<td><p>Normal</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Paruh baya</p></td>
+<td><p>Tinggi</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Tua</p></td>
+<td><p>Normal</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Tua</p></td>
+<td><p>Sangat Tinggi</p></td>
+<td><p>H</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Muda</p></td>
+<td><p>Normal</p></td>
+<td><p>T</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>Tua</p></td>
+<td><p>Tinggi</p></td>
+<td><p>H</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Berdasarkan informasi yang diberikan dalam tabel, kita dapat menggunakan konsep probabilitas untuk menghitung kemungkinan seseorang menderita penyakit hipertensi (H) atau tidak (T) berdasarkan usia dan tekanan darah.</p>
+<p>Secara umum, rumus probabilitas adalah:</p>
+<div class="math notranslate nohighlight">
+\[P(A) = \frac{\text{Jumlah kasus A}}{\text{Total jumlah kasus}}\]</div>
+<p>Dalam konteks ini, kita ingin mencari probabilitas:</p>
+<ol class="arabic simple">
+<li><p>Seseorang menderita penyakit hipertensi (H)</p></li>
+<li><p>Seseorang tidak menderita penyakit hipertensi (T)</p></li>
+</ol>
+<p>Untuk mencari probabilitas penyakit hipertensi (H), kita dapat menggunakan rumus:</p>
+<div class="math notranslate nohighlight">
+\[P(H) = \frac{\text{Jumlah kasus H}}{\text{Total jumlah kasus}}\]</div>
+<p>Dari tabel, kita dapat menghitung jumlah kasus H sebagai berikut:</p>
+<ul class="simple">
+<li><p>Baris 4: 1 kasus</p></li>
+<li><p>Baris 5: 1 kasus</p></li>
+<li><p>Baris 6: 1 kasus</p></li>
+<li><p>Baris 8: 1 kasus</p></li>
+</ul>
+<p>Jadi total kasus H = 4</p>
+<p>Sementara total jumlah kasus = 8</p>
+<p>Maka probabilitas penyakit hipertensi (H) adalah:</p>
+<div class="math notranslate nohighlight">
+\[P(H) = \frac{4}{8} = 0.5 = 50\%\]</div>
+<p>Untuk mencari probabilitas tidak menderita penyakit hipertensi (T), kita dapat menggunakan rumus:</p>
+<div class="math notranslate nohighlight">
+\[P(T) = \frac{\text{Jumlah kasus T}}{\text{Total jumlah kasus}}\]</div>
+<p>Dari tabel, kita dapat menghitung jumlah kasus T sebagai berikut:</p>
+<ul class="simple">
+<li><p>Baris 1: 1 kasus</p></li>
+<li><p>Baris 2: 1 kasus</p></li>
+<li><p>Baris 3: 1 kasus</p></li>
+<li><p>Baris 7: 1 kasus</p></li>
+</ul>
+<p>Jadi total kasus T = 4</p>
+<p>Maka probabilitas tidak menderita penyakit hipertensi (T) adalah:</p>
+<div class="math notranslate nohighlight">
+\[P(T) = \frac{4}{8} = 0.5 = 50\%\]</div>
+<p>Jadi berdasarkan perhitungan probabilitas, seseorang dengan karakteristik usia dan tekanan darah seperti yang tertera dalam tabel memiliki kemungkinan yang sama (50%) untuk menderita penyakit hipertensi (H) atau tidak (T).</p>
+</section>
+</section>
+<section id="teorema-bayes">
+<h2>Teorema Bayes<a class="headerlink" href="#teorema-bayes" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Penjelasannya:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Teorema Bayes adalah konsep dasar dalam probabilitas dan statistik yang menggambarkan hubungan antara probabilitas bersyarat. Teorema ini memungkinkan kita untuk memperbarui keyakinan atau probabilitas kita tentang suatu peristiwa berdasarkan bukti atau informasi baru. Teorema ini dapat dinyatakan secara matematis sebagai:</p>
+<div class="math notranslate nohighlight">
+\[P(A|B) = \frac{P(B|A)P(A)}{P(B)}\]</div>
+<p>Di sini, istilah-istilah utamanya adalah:</p>
+<section id="komponen-utama">
+<h4>Komponen Utama:<a class="headerlink" href="#komponen-utama" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Probabilitas Posterior</strong> (<code class="docutils literal notranslate"><span class="pre">P(A|B)</span></code>): Ini adalah probabilitas terjadinya peristiwa A, mengingat peristiwa B telah terjadi. Inilah yang ingin kita hitung.</p>
+<ul class="simple">
+<li><p>Probabilitas A setelah mengamati B</p></li>
+<li><p>Merupakan keyakinan yang diperbarui</p></li>
+</ul>
+</li>
+<li><p><strong>Kemungkinan</strong> (<code class="docutils literal notranslate"><span class="pre">P(B|A)</span></code>): Ini adalah probabilitas untuk mengamati peristiwa B, jika peristiwa A benar. Ini merupakan “bukti” atau informasi baru yang kita miliki.</p>
+<ul class="simple">
+<li><p>Probabilitas mengamati B jika A benar</p></li>
+<li><p>Representasi bukti atau informasi baru</p></li>
+</ul>
+</li>
+<li><p><strong>Probabilitas Sebelumnya</strong> (<code class="docutils literal notranslate"><span class="pre">P(A)</span></code>): Ini adalah probabilitas awal yang sudah ada sebelumnya dari terjadinya peristiwa A, sebelum mempertimbangkan bukti baru apa pun.</p>
+<ul class="simple">
+<li><p>Probabilitas awal A sebelum mempertimbangkan bukti baru</p></li>
+<li><p>Mencerminkan pengetahuan awal</p></li>
+</ul>
+</li>
+<li><p><strong>Probabilitas Marjinal</strong> (<code class="docutils literal notranslate"><span class="pre">P(B)</span></code>): Ini adalah probabilitas keseluruhan terjadinya peristiwa B, terlepas dari apakah peristiwa A benar atau tidak.</p>
+<ul class="simple">
+<li><p>Probabilitas keseluruhan terjadinya B</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+<section id="interpretasi-praktis">
+<h3>Interpretasi Praktis<a class="headerlink" href="#interpretasi-praktis" title="Link to this heading">#</a></h3>
+<p>Teorema Bayes memungkinkan kita:</p>
+<ul class="simple">
+<li><p>Memperbarui keyakinan berdasarkan bukti baru</p></li>
+<li><p>Menggabungkan informasi sebelumnya dengan data aktual</p></li>
+<li><p>Membuat keputusan yang lebih baik dalam ketidakpastian</p></li>
+</ul>
+<p>Teorema ini memungkinkan kita untuk memperbarui keyakinan kita tentang probabilitas terjadinya peristiwa A, berdasarkan bukti baru yang diwakili oleh peristiwa B. Kita mulai dengan keyakinan sebelumnya tentang A, lalu menggunakan kemungkinan mengamati B jika A, serta probabilitas keseluruhan B, untuk merevisi estimasi kita tentang probabilitas A.</p>
+<p>Ini adalah alat yang ampuh untuk bernalar dalam ketidakpastian, karena menyediakan cara sistematis untuk memasukkan informasi baru dan menyesuaikan estimasi kita sebagaimana mestinya. Teorema Bayes memiliki aplikasi dalam berbagai bidang, mulai dari diagnosis medis hingga pembelajaran mesin dan pengambilan keputusan.</p>
+</section>
+</section>
+<section id="rumus-naive-bayes">
+<h2>Rumus Naive Bayes<a class="headerlink" href="#rumus-naive-bayes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Hitunglah probabilitas Hipertensi terhadapa usia paruh baya tekanan darah sangat tinggi</p></li>
+<li><p>Hitunglah probabilitas Tidak  Hipertensi terhadap usia paruh baya tekanan darah sangat tinggi</p></li>
+</ul>
+<section id="kasus-hipertensi-analisis-probabilitas-lanjut">
+<h3>Kasus Hipertensi: Analisis Probabilitas Lanjut<a class="headerlink" href="#kasus-hipertensi-analisis-probabilitas-lanjut" title="Link to this heading">#</a></h3>
+</section>
+<section id="id2">
+<h3>Penjelasannya:<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Skenario: Usia Paruh Baya dengan Tekanan Darah Sangat Tinggi</p>
+<ol class="arabic simple">
+<li><p>Menghitung Probabilitas Hipertensi (H) pada Usia Paruh Baya dengan Tekanan Darah Sangat Tinggi</p></li>
+</ol>
+<p>Berdasarkan informasi pada tabel, kita dapat melihat bahwa pada baris 6, untuk usia “Tua” (yang dapat diasumsikan mencakup usia paruh baya) dan tekanan darah “Sangat Tinggi”, probabilitas penyakit hipertensi (H) adalah 1.</p>
+<p>Secara matematis, kita dapat tulis:</p>
+<div class="math notranslate nohighlight">
+\[P(H | \text{Paruh baya, Sangat Tinggi}) = 1\]</div>
+<p>Ini berarti, jika seseorang berusia paruh baya dengan tekanan darah sangat tinggi, maka peluang dia menderita hipertensi adalah 100% atau 1.</p>
+<ol class="arabic simple" start="2">
+<li><p>Menghitung Probabilitas Tidak Hipertensi (T) pada Usia Paruh Baya dengan Tekanan Darah Sangat Tinggi</p></li>
+</ol>
+<p>Sebaliknya, untuk probabilitas tidak hipertensi (T) pada usia paruh baya dengan tekanan darah sangat tinggi, kita dapat melihat pada tabel bahwa nilai yang tertera adalah “T”.</p>
+<p>Secara matematis, kita dapat tulis:</p>
+<div class="math notranslate nohighlight">
+\[P(T | \text{Paruh baya, Sangat Tinggi}) = 0\]</div>
+<p>Ini berarti, jika seseorang berusia paruh baya dengan tekanan darah sangat tinggi, maka peluang dia tidak menderita hipertensi adalah 0% atau 0.</p>
+<p>Penjelasan secara detail:</p>
+<p>Teorema Bayes menyatakan bahwa probabilitas posterior suatu peristiwa A, diberi peristiwa B, dapat dihitung dengan formula:</p>
+<div class="math notranslate nohighlight">
+\[P(A|B) = \frac{P(B|A)P(A)}{P(B)}\]</div>
+<p>Dalam konteks ini:</p>
+<ul class="simple">
+<li><p>A = Hipertensi (H) atau Tidak Hipertensi (T)</p></li>
+<li><p>B = Usia Paruh Baya dengan Tekanan Darah Sangat Tinggi</p></li>
+</ul>
+<p>Untuk menghitung <span class="math notranslate nohighlight">\(P(H | \text{Paruh baya, Sangat Tinggi})\)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(B|A) = 1\)</span>, karena dari tabel kita tahu bahwa jika usia paruh baya dan tekanan darah sangat tinggi, maka penyakitnya adalah Hipertensi (H).</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(A) = P(H)\)</span>, karena kita tidak memiliki informasi awal tentang probabilitas Hipertensi.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(B)\)</span> tidak perlu dihitung karena nilainya tidak dibutuhkan untuk menghitung <span class="math notranslate nohighlight">\(P(H | \text{Paruh baya, Sangat Tinggi})\)</span>.</p></li>
+</ul>
+<p>Sehingga, <span class="math notranslate nohighlight">\(P(H | \text{Paruh baya, Sangat Tinggi}) = 1 \times P(H) / P(B) = 1\)</span>.</p>
+<p>Untuk menghitung <span class="math notranslate nohighlight">\(P(T | \text{Paruh baya, Sangat Tinggi})\)</span>:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(B|A) = 0\)</span>, karena dari tabel kita tahu bahwa jika usia paruh baya dan tekanan darah sangat tinggi, maka penyakitnya adalah Hipertensi (H), bukan Tidak Hipertensi (T).</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(A) = P(T)\)</span>, karena kita tidak memiliki informasi awal tentang probabilitas Tidak Hipertensi.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(B)\)</span> tidak perlu dihitung.</p></li>
+</ul>
+<p>Sehingga, <span class="math notranslate nohighlight">\(P(T | \text{Paruh baya, Sangat Tinggi}) = 0 \times P(T) / P(B) = 0\)</span>.</p>
+<p>Jadi, dapat disimpulkan bahwa:</p>
+<ul class="simple">
+<li><p>Probabilitas Hipertensi (H) pada usia paruh baya dengan tekanan darah sangat tinggi adalah 100% atau 1.</p></li>
+<li><p>Probabilitas Tidak Hipertensi (T) pada usia paruh baya dengan tekanan darah sangat tinggi adalah 0%.</p></li>
+</ul>
+</section>
+<section id="catatan-penting-dalam-probabilitas">
+<h3>Catatan Penting dalam Probabilitas<a class="headerlink" href="#catatan-penting-dalam-probabilitas" title="Link to this heading">#</a></h3>
+<section id="batasan-dan-pertimbangan">
+<h4>Batasan dan Pertimbangan<a class="headerlink" href="#batasan-dan-pertimbangan" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Probabilitas selalu bernilai antara 0 dan 1</p></li>
+<li><p>Semakin banyak data, semakin akurat estimasi</p></li>
+<li><p>Konteks dan kualitas data sangat menentukan</p></li>
+</ul>
+</section>
+<section id="aplikasi-praktis">
+<h4>Aplikasi Praktis<a class="headerlink" href="#aplikasi-praktis" title="Link to this heading">#</a></h4>
+<p>Probabilitas Bayesian berguna dalam:</p>
+<ul class="simple">
+<li><p>Diagnosis medis</p></li>
+<li><p>Prediksi risiko penyakit</p></li>
+<li><p>Sistem rekomendasi</p></li>
+<li><p>Analisis keputusan berisiko</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="deretandanrekursi.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Deretan dan Rekursi</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagaimana-kemungkinan-probabilitas-usia-paruh-baya-tekanan-darah-sangat-tinggi-kemungkinan-penyakit-hipertensi-h-atau-tidak-t">Bagaimana kemungkinan/probabilitas usia paruh baya tekanan darah sangat tinggi  kemungkinan penyakit Hipertensi (H) atau Tidak (T)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasannya">Penjelasannya:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-bayes">Teorema Bayes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Penjelasannya:</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#komponen-utama">Komponen Utama:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretasi-praktis">Interpretasi Praktis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rumus-naive-bayes">Rumus Naive Bayes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kasus-hipertensi-analisis-probabilitas-lanjut">Kasus Hipertensi: Analisis Probabilitas Lanjut</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Penjelasannya:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catatan-penting-dalam-probabilitas">Catatan Penting dalam Probabilitas</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#batasan-dan-pertimbangan">Batasan dan Pertimbangan</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-praktis">Aplikasi Praktis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
