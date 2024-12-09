@@ -391,7 +391,125 @@
 <li><p><strong>Social Network</strong> Analysis merupakan bidang kajian yang mengekplorasitentang hubungan manusia dengan menggunakan teori graf. Implementasi Social Network Analysis dapat menjelaskan relasi atau hubungan antar aktor melalui visualisasi berbentuk graf. Relasi dalam analisis jaringan sosial dapat diproses dalam bentuk perhitungan yang disebut centrality dalam sebuah jaringan sosial sesuai dengan posisi masing-masing aktor di dalam struktur jaringan tersebut</p></li>
 <li><p><strong>Social network</strong> terdapat node yang mewakili orang atau individu atau aktor. Relasi  antar objek  dapat dinyatakan dengan link atau edges yang terjadi antara aktor tersebut. <em>Social network</em> terdiri dari banyak aktor yang mempunyai relasi satu sama lain hingga membentuk peta jaringan sosial yang dinyatakan dengan graph.</p></li>
 </ul>
-<p><img alt="img_1.png" src="_images/img_29.png" /></p>
+<p><img alt="Slide3.jpg" src="_images/Slide3.jpg" /></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Node</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>8</p></th>
+<th class="head"><p>9</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>-</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>-</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Tabel 1.3: Adjacency Matriks</strong></p>
 <ul class="simple">
 <li><p>Tidak semua node dalam jaringan adalah penting  (aktor)</p></li>
 <li><p>Mencari node yang paling penting dalam suatu jaringan</p></li>
@@ -419,9 +537,9 @@ $<span class="math notranslate nohighlight">\( C_D(v_i) = d_i = \sum_{j} A_{ij} 
 <li><p>Normalisasi  Degree Centrality:
 $<span class="math notranslate nohighlight">\( C'_D(v_i) = d_i / (n - 1) \)</span>$</p></li>
 </ul>
-<p>Untuk  node 1, degree centrality adalah 3;
+<p><img alt="Slide3.jpg" src="_images/Slide3.jpg" />
+Untuk  node 1, degree centrality adalah 3;
 Normalisasi degree centrality adalah 3/(9-1)=3/8.</p>
-<p><img alt="Normalisasi  Degree Centrality" src="https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_b315e164df83a9222e26a1d4ad9ea347.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&amp;Expires=1733052421&amp;Signature=BP5nM46CUYtf4Hk9rH841z0s%2FH8%3D" /></p>
 </section>
 <section id="closeness-centrality">
 <h2>Closeness Centrality<a class="headerlink" href="#closeness-centrality" title="Link to this heading">#</a></h2>
@@ -434,8 +552,125 @@ $<span class="math notranslate nohighlight">\( C_C(v_i) = \left[\frac{1}{n-1} \s
 </ul>
 <section id="contoh-closeness-centrality">
 <h3>Contoh Closeness Centrality<a class="headerlink" href="#contoh-closeness-centrality" title="Link to this heading">#</a></h3>
-<p>![image](<a class="reference external" href="https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_b315e164df83a9222e26a1d4ad9ea347.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&amp;amp;Expires=1733052421&amp;amp;Signature=BP5nM46CUYtf4Hk9rH841z0s%2FH8%3D">https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_b315e164df83a9222e26a1d4ad9ea347.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&amp;Expires=1733052421&amp;Signature=BP5nM46CUYtf4Hk9rH841z0s%2FH8%3D</a> “Social network)
-<img alt="image" src="https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_616754a8735a944abc01a477c63992fa.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&amp;Expires=1733052036&amp;Signature=pQhYluns%2Bh00MounGehX9kZJx14%3D" /></p>
+<p><img alt="Slide3.jpg" src="_images/Slide3.jpg" /></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Node</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>2</p></th>
+<th class="head"><p>3</p></th>
+<th class="head"><p>4</p></th>
+<th class="head"><p>5</p></th>
+<th class="head"><p>6</p></th>
+<th class="head"><p>7</p></th>
+<th class="head"><p>8</p></th>
+<th class="head"><p>9</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>2</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>3</p></td>
+<td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>4</p></td>
+<td><p>5</p></td>
+<td><p>4</p></td>
+<td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>2</p></td>
+<td><p>1</p></td>
+<td><p>2</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Tabel 2.1: Pairwise godeisc distance</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}C_C(3) = \frac{9-1}{1+1+1+2+2+3+3+4} = 8/17 = 0.47, \\
 C_C(4) = \frac{9-1}{1+2+1+1+1+2+2+3} = 8/13 = 0.62. \end{split}\]</div>
@@ -459,9 +694,47 @@ $<span class="math notranslate nohighlight">\( C_B(v_i) = \sum_{v_s \neq v_i \ne
 \[ \sigma_{st}(v_i) \text{ Jumlah lintasan terpendek antara } s \text{ dan } t \text{ yang melewati } v_i \]</div>
 </li>
 </ul>
-<p><img alt="image" src="https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_b315e164df83a9222e26a1d4ad9ea347.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&amp;Expires=1733052421&amp;Signature=BP5nM46CUYtf4Hk9rH841z0s%2FH8%3D" />
-<img alt="image" src="https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_7f42bae3b14ac2159ed4046bbd494c17.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&amp;Expires=1733052359&amp;Signature=cCYasZQ0z3gvsIFN%2Bjw5rMpt4k8%3D" />
-$<span class="math notranslate nohighlight">\( C_B (4) = 15 \)</span>$</p>
+<div class="math notranslate nohighlight">
+\[ C_B (4) = 15 \]</div>
+<p><img alt="Slide3.jpg" src="_images/Slide3.jpg" />
+<strong>Tabel: 2.2: <span class="math notranslate nohighlight">\(\sigma_{st}(4) / \sigma_{st}\)</span></strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>t \ s</p></th>
+<th class="head"><p><em>s</em> = 1</p></th>
+<th class="head"><p><em>s</em> = 2</p></th>
+<th class="head"><p><em>s</em> = 3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>t</em> = 5</p></td>
+<td><p>1/1</p></td>
+<td><p>2/2</p></td>
+<td><p>1/1</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>t</em> = 6</p></td>
+<td><p>1/1</p></td>
+<td><p>2/2</p></td>
+<td><p>1/1</p></td>
+</tr>
+<tr class="row-even"><td><p><em>t</em>= 7</p></td>
+<td><p>2/2</p></td>
+<td><p>4/4</p></td>
+<td><p>2/2</p></td>
+</tr>
+<tr class="row-odd"><td><p><em>t</em>= 8</p></td>
+<td><p>2/2</p></td>
+<td><p>4/4</p></td>
+<td><p>2/2</p></td>
+</tr>
+<tr class="row-even"><td><p><em>t</em>= 9</p></td>
+<td><p>2/2</p></td>
+<td><p>4/4</p></td>
+<td><p>2/2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <ul class="simple">
 <li><p>betweenness centrality  untuk node 5?</p></li>
 </ul>
@@ -521,7 +794,7 @@ Beetweeness centrality:
  {9: 0.0, 7: 0.25, 5: 0.21428571428571427, 8: 0.0, 6: 0.21428571428571427, 4: 0.5357142857142857, 3: 0.10714285714285714, 1: 0.10714285714285714, 2: 0.0}
 </pre></div>
 </div>
-<img alt="_images/bf0d02c714117a322a471e95df3e1c579209f044c3dfa38ff5e11bacba148d3d.png" src="_images/bf0d02c714117a322a471e95df3e1c579209f044c3dfa38ff5e11bacba148d3d.png" />
+<img alt="_images/dac2bb451f212dc0583d0f193b7ab62669efc39d1a257a3587c221f03fd51692.png" src="_images/dac2bb451f212dc0583d0f193b7ab62669efc39d1a257a3587c221f03fd51692.png" />
 </div>
 </div>
 </section>
