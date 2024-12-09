@@ -9,7 +9,7 @@ Check out the content pages bundled with this sample book to see more.
 
 <!-- <center> -->
 <!-- <img src="img/logo.png"></img> -->
-![image](./img/logo.png)
+![image](logo.png)
 <!-- </center> -->
 
 #### Biodata:
