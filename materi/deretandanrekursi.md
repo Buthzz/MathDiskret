@@ -27,7 +27,7 @@ Dalam konteks matematika, deretan sering merujuk pada barisan bilangan, yaitu ku
 Deret dengan pola kenaikan atau penurunan tetap.
 - Contoh: 2,5,8,11,14,...
 - Rumus suku ke-n:
-$$ U_n = a + (n - 1) \cdot b$$
+$ U_n = a + (n - 1) \cdot b$
 
 Di mana:
 - a: suku pertama 
@@ -38,7 +38,7 @@ Di mana:
 Deret dengan pola kelipatan tetap.
 - Contoh: 3,6,12,24,48,... 
 - Rumus suku ke-n:
-$$ U_n = a \cdot r^{(n-1)} $$
+$ U_n = a \cdot r^{(n-1)} $
 
 Di mana:
 - a: suku pertama 
@@ -49,34 +49,30 @@ Di mana:
 Deret dengan pola nilai berupa kuadrat bilangan bulat.
 - Contoh: 1,4,9,16,25,...
 - Rumus suku ke-n:
-$$ U_n = n^2 $$
+$ U_n = n^2 $
 
 ### Deret Bilangan Kubik
 Deret dengan pola nilai berupa kubik bilangan bulat.
 - Contoh: 1,8,27,64,125,...
 - Rumus suku ke-n:
-$$ U_n = n^3 $$
+$ U_n = n^3 $
 
 ### Deret Fibonacci
 Deret dengan pola di mana setiap suku merupakan jumlah dua suku sebelumnya.
 - Contoh: 0,1,1,2,3,5,8,...
 - Rumus suku ke-n (rekursif):
-$$ F_n = F_{n-1} + F_{n-2}, F_0 = 0, F_1=1$$
+$ F_n = F_{n-1} + F_{n-2}, F_0 = 0, F_1=1$
 
 
 ## String
 - String adalah deretan berhingga karakter berbentuk
-$$ a_1a_2a_3a_4...a_n $$
+$ a_1a_2a_3a_4...a_n $
 Panjang string S adalah jumlah karakter di dalam string tersebut
 - Contoh: Informatika adalah string dengan panjang 11 karakter 10100101 adalah string biner dengan panjang 8 bit
-- String kosong dilambangkan dengan $$ \lambda $$ , panjangnya = 0
+- String kosong dilambangkan dengan $ \lambda $ , panjangnya = 0
 
 #### Penjumlahan deretan
-Jumlah deretan
-$$ a_m, a_{m+1}, a_{m+2},...,a_n $$
-adalah
-$$ a_m + a_{m+1}, + a_{m+2} + ... + a_n $$
-atau dalam notasi sumasi:
+Jumlah deretan $ a_m, a_{m+1}, a_{m+2},...,a_n $ adalah $ a_m + a_{m+1}, + a_{m+2} + ... + a_n $ atau dalam notasi sumasi:
 
 $$ \Sigma_{k=m}^n  a_k $$
 
@@ -84,29 +80,28 @@ $$ \Sigma_{k=m}^n  a_k $$
 - _m_ adalah batas bawah indeks,
 - _n_ adalah batas atas indeks
 
-Contoh 2: Berapa nilai: $$ \sum_{k=1}^{5} k^2 $$
+Contoh 2: Berapa nilai: $ \sum_{k=1}^{5} k^2 $
 Jawaban:
-$$ \sum_{k=1}^{5} k^2 = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 = 1 + 4 + 9 + 16 + 25 = 55 $$
+$ \sum_{k=1}^{5} k^2 = 1^2 + 2^2 + 3^2 + 4^2 + 5^2 = 1 + 4 + 9 + 16 + 25 = 55 $
 
 Contoh 3: Batas bawah sumasi kadangkala perlu digeser agar dapat dijumlahkan dengan sumasi lain yang memiliki batas bawah berbeda. Pada contoh 2 diatas batas bawah digeser dari 1 menjadi 0, akibatnya:
-$$ \sum_{k=1}^{5} k^2 = \sum_{k=0}^{4} (k+1)^2 $$
+$ \sum_{k=1}^{5} k^2 = \sum_{k=0}^{4} (k+1)^2 $
 
 Contoh 4: Sumasi dapat di pecah dengan membagi dua indeksnya, misalnya
-$$ \sum_{k=1}^{100} k^2 = \sum_{k=1}^{49} k^2 + \sum_{k=50}^{100} k^2 $$
-[//]: # (Slide 12)
+$ \sum_{k=1}^{100} k^2 = \sum_{k=1}^{49} k^2 + \sum_{k=50}^{100} k^2 $
+
 ##### Tugas pembuktian dari 3 rumus dibawah
 Beberapa sumasi sudah ditemukan rumus penjumlahannya sebagai berikut:
 
 ![img_1.png](img/img_1.png)
 
-Contoh 5: Hitung nilai $$  \sum_{k=50}^{100} k^2 $$
+Contoh 5: Hitung nilai $  \sum_{k=50}^{100} k^2 $
 Jawaban:$$ \sum_{k=1}^{100} k^2 = \sum_{k=1}^{49} k^2 + \sum_{k=50}^{100} k^2 $$
 
 $$ \sum_{k=50}^{100} k^2 = \sum_{k=1}^{100} k^2 - \sum_{k=1}^{49} k^2 $$
 
-Gunakan rumus:
-$$ \sum_{k=1}^{n} k^2 = \frac{n(n+1)(2n+1)}{6} $$
-$$ \sum_{k=50}^{100} k^2 = \frac{100(101)(201)}{6} - \frac{49(50)(99)}{6} = 338,350 - 40,425 = 297,925 $$
+Gunakan rumus: $ \sum_{k=1}^{n} k^2 = \frac{n(n+1)(2n+1)}{6} $
+$ \sum_{k=50}^{100} k^2 = \frac{100(101)(201)}{6} - \frac{49(50)(99)}{6} = 338,350 - 40,425 = 297,925 $
 
 
 ### Sumasi ganda
@@ -116,7 +111,7 @@ Di dalam algoritma, kita perlu menghitung berapa kali suatu operasi tertentu dil
 $$ \sum_{i=1}^{4} \sum_{j=1}^3 ij $$
 
 Untuk menghitung sumasi ganda, mula-mula ekspansi sumasi terdalam, lalu dilanjutkan dengan sumasi terluar:
-$$ \sum_{i=1}^{4} \sum_{j=1}^{3} ij = \sum_{i=1}^{4} (i + 2i + 3i) = \sum_{i=1}^{4} 6i = 6 + 12 + 18 + 24 = 60 $$
+$ \sum_{i=1}^{4} \sum_{j=1}^{3} ij = \sum_{i=1}^{4} (i + 2i + 3i) = \sum_{i=1}^{4} 6i = 6 + 12 + 18 + 24 = 60 $
 
 Contoh penggunaan: Berapa kali operasi + dilakukan didalam algoritma di bawah ini
 ```
@@ -130,19 +125,19 @@ end for
 Penyelesaian: <br>
 Operasi + terdapat di dalam pernyataan x = x + 2<br>
 Operasi ini di lakukan satu kali pada setiap pengulangan<br>
-Jumlah seluruh operasi + adalah:
-$$ t = \sum_{j=1}^{10} \sum_{k=1}^{j} 1 \\
+Jumlah seluruh operasi (+) adalah:
+$ t = \sum_{j=1}^{10} \sum_{k=1}^{j} 1 \\
    = \sum_{j=1}^{10} (1 + 1 + ... + 1 \text{ sebanyak } j \text{ kali}) \\
    = \sum_{j=1}^{10} j \\
    = \frac{10(10+1)}{2} = 55 
-$$
+$
 Latihan:
 1. Tentukan nilai
-$$ \sum_{k=1}^{8} 2^k + \sum_{k=2}^{8} (-3)^k $$
+$ \sum_{k=1}^{8} 2^k + \sum_{k=2}^{8} (-3)^k $
 2. Twntukan nilai
-$$ \sum_{i=0}^{2} \sum_{j=0}^{3} (2i + 3j) $$
+$ \sum_{i=0}^{2} \sum_{j=0}^{3} (2i + 3j) $
 3. Tentukan nilai
-$$ \sum_{i=0}^{3} \sum_{j=0}^{2} i $$
+$ \sum_{i=0}^{3} \sum_{j=0}^{2} i $
 
 ## Rekursi
 
@@ -172,15 +167,15 @@ $$f(n) = \begin{cases}
 Tentukan nilai $f(4)!$
 
 Solusi:
-$$f(4) = 2f(3) + 4$$
-$$= 2(2f(2) + 4) + 4$$
-$$= 2(2(2f(1) + 4) + 4) + 4$$
-$$= 2(2(2(2f(0) + 4) + 4) + 4) + 4$$
-$$= 2(2(2(2*3 + 4) + 4) + 4) + 4$$
-$$= 2(2(2(10) + 4) + 4) + 4$$
-$$= 2(2(24) + 4) + 4$$
-$$= 2(52) + 4$$
-$$= 108$$
+$f(4) = 2f(3) + 4$
+$= 2(2f(2) + 4) + 4$
+$= 2(2(2f(1) + 4) + 4) + 4$
+$= 2(2(2(2f(0) + 4) + 4) + 4) + 4$
+$= 2(2(2(2*3 + 4) + 4) + 4) + 4$
+$= 2(2(2(10) + 4) + 4) + 4$
+$= 2(2(24) + 4) + 4$
+$= 2(52) + 4$
+$= 108$
 
 Cara lain menghitungnya:
 
@@ -190,16 +185,16 @@ $$f(2) = 2f(1) + 4 = 2 \cdot 10 + 4 = 24$$
 $$f(3) = 2f(2) + 4 = 2 \cdot 24 + 4 = 52$$
 $$f(4) = 2f(3) + 4 = 2 \cdot 52 + 4 = 108$$
 
-Jadi, $$f(4) = 108.$$
+Jadi, $f(4) = 108.$
 
 Contoh 7: Nyatakan _n_! dalam definisi rekursif <br>
 Solusi:
-$$ n! = \underbrace{1 \times 2 \times 3 \times ... \times (n-1)} \times n = (n-1)! \times n $$
+$ n! = \underbrace{1 \times 2 \times 3 \times ... \times (n-1)} \times n = (n-1)! \times n $
 Misalkan f(n) = n!, maka
-$$ n! = \begin{cases}
+$ n! = \begin{cases}
 1 & \text{jika } n = 0 \\
 n \cdot (n-1)! & \text{jika } n > 0
-\end{cases} $$
+\end{cases} $
 
 Menghitung 5! secara rekursif adalah:
 $$ 5! = 5 \cdot 4! = 5 \cdot 4 \cdot 3! = 5 \cdot 4 \cdot 3 \cdot 2! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1! = 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 \cdot 0! = 120 $$
@@ -224,20 +219,20 @@ end
 ```
 
 Contoh 8: barisan Fibonacci 0,1,1,2,3,5,8,11,10,... Dapat dinyatakan secara rekursif sebagai berikut:
- $$ f_n = \begin{cases}
+$ f_n = \begin{cases}
 0 & , n=0 \\
 1 & , n=1 \\
 f_{n-1} + f_{n-2} & , n>1
 \end{cases}
-$$
+$
 Contoh 9: Fungsi (polinom) Chebyshev dinyatakan sebagai
-$$
+$
 T(n,x) = \begin{cases}
 1 & , n=0 \\
 x & , n=1 \\
 2x \cdot T(n-1,x) - T(n-2,x) & , n>1
 \end{cases}
-$$
+$
 
 Contoh 10: Sumasi $\sum_{k=0}^{n} a_k$ didefinisikan secara rekursif sebagai berikut:
 
@@ -256,9 +251,22 @@ Latihan
 1. Definisikan $ a{^n} $ secara
 
 Solusi:
-1. ![img_1.png](img/img_16.png)
-sehingga: ![img_2.png](img/img_17.png)
-2. ![img_3.png](img/img_18.png) => ![img_4.png](img/img_19.png)
+1.$ a^n = \underbrace{a \cdot a \cdot a \cdots a}_{n \text{ kali}} = a \cdot \underbrace{a \cdot a \cdot a \cdots a}_{n-1 \text{ kali}} = a \cdot a^{n-1} $
+sehingga: 
+$
+a^n = \begin{cases}
+1, & \text{jika } n = 0 \\
+a \cdot a^{n-1}, & \text{jika } n > 0
+\end{cases}
+$
+
+2. $ a \cdot b = \underbrace{b + b + b + \cdots + b}_{a \text{ kali}} \\ = \underbrace{b + b + b + \cdots + b}_{a-1 \text{ kali}} \\ = b + (a-1)b \\$
+$
+a \cdot b = \begin{cases}
+    b & ,a = 1 \\
+    b + (a-1)b & ,a > 1
+\end{cases}
+$
 
 ### Struktur Rekursif
 - Struktur data yang penting dalam komputer adalah pohon biner (binary tree).
@@ -275,8 +283,8 @@ Pohon biner adalah stuktur yang rekursif, sebab setiap simpul mempunyai cabang y
 
 - Oleh karena itu, pohon daoat didefinisikan secara rekursif sebagi berikut:
   (i) Basis: kosong adalah pohon biner
-  (ii) Rekurens: Jika T1 dan T2 adalah pohon biner , maka adalah pohon biner
+  (ii) Rekurens: Jika $T_1$ dan $T_2$ adalah pohon biner , maka adalah pohon biner  $T_1$ dan $T_2$
 
 Proses pembentukan pohon biner secara rekursif:
-(i) ![img_3.png](img/img_27.png)
-(ii) ![img_4.png](img/img_28.png)
+- (i) ![img_3.png](img/img_27.png)
+- (ii) ![img_4.png](img/img_28.png)
