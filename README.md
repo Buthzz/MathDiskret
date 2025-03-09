@@ -1,3 +1,3 @@
 # MathDiskret
 
-Command : https://github.com/mfjrxn/cmd-jupyter
+Command : https://github.com/hexfjr/cmd-jupyter
